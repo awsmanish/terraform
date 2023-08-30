@@ -1,6 +1,3 @@
-create file ----> sudo vim s3-bucket.tf
-
-
 resource "aws_s3_bucket" "bucket1" {
   bucket = "bucket01"
 
