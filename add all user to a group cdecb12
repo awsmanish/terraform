@@ -1,0 +1,40 @@
+resource "aws_iam_user" "user01" {
+  name = "m1"
+}
+
+resource "aws_iam_user" "user02" {
+  name = "m2"
+}
+
+resource "aws_iam_user" "user03" {
+  name = "m3"
+}
+
+resource "aws_iam_user" "user04" {
+  name = "m4"
+}
+
+resource "aws_iam_user" "user05" {
+  name = "m5"
+}
+
+resource "aws_iam_group" "group" {
+  name = "cdecb12"
+}
+
+resource "aws_iam_group_membership" "users-add" {
+  name = "cdecb12-group"
+
+  users = [
+    aws_iam_user.user01.name,
+    aws_iam_user.user02.name,
+    aws_iam_user.user03.name,
+    aws_iam_user.user04.name,
+    aws_iam_user.user05.name,
+  ]
+
+  group = aws_iam_group.group.name
+}
+
+
+
