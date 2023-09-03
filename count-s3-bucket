@@ -1,0 +1,4 @@
+resource "aws_s3_bucket" "buckets" {
+  count = 5
+  bucket = "countbuck-${count.index + 1}"
+}
